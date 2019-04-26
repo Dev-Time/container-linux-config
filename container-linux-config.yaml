@@ -32,7 +32,7 @@ systemd:
         Type=exec
         ExecStartPre=-/sbin/modprobe br_netfilter
         ExecStartPre=-/sbin/modprobe overlay
-        ExecStart=/usr/local/bin/k3s agent --server https://192.168.1.30:6443 --token K103785d4aff7aeacf8100cdc44b815b21687cd84c7ad73725f2efce33d98ac9009::node:e4bc72a2b7f4b35b68d7ff2d826fc79b --no-flannel --kubelet-arg allow-privileged=true
+        ExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K103785d4aff7aeacf8100cdc44b815b21687cd84c7ad73725f2efce33d98ac9009::node:e4bc72a2b7f4b35b68d7ff2d826fc79b --no-flannel --kubelet-arg allow-privileged=true
         KillMode=process
         Delegate=yes
         LimitNOFILE=infinity
