@@ -23,6 +23,29 @@ storage:
       mode: 420
       contents:
         inline: "coreos"
+    - path: "/etc/cni/net.d/10-flannel.conflist"
+      filesystem: "root"
+      mode: 644
+      contents:
+        inline: |
+          {
+            "name": "cbr0",
+            "plugins": [
+              {
+                "type": "flannel",
+                "delegate": {
+                  "hairpinMode": true,
+                  "isDefaultGateway": true
+                }
+              },
+              {
+                "type": "portmap",
+                "capabilities": {
+                  "portMappings": true
+                }
+              }
+            ]
+          }
 systemd:
   units:
     - name: "k3s-agent.service"
