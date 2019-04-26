@@ -9,11 +9,6 @@
   },
   "networkd": {},
   "passwd": {
-    "groups": [
-      {
-        "name": "whenke"
-      }
-    ],
     "users": [
       {
         "groups": [

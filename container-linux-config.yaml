@@ -7,8 +7,6 @@ passwd:
       groups:
         - "sudo"
       shell: "/bin/bash"
-  groups:
-    - name: "whenke"
 update:
   group: "stable"
 locksmith:
