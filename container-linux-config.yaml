@@ -70,6 +70,12 @@ storage:
       contents:
         remote:
           url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-device"
+    - path: "/opt/cni/bin/host-local"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-local"
 systemd:
   units:
     - name: "k3s-agent.service"
