@@ -50,6 +50,42 @@
       },
       {
         "filesystem": "root",
+        "path": "/opt/cni/bin/loopback",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/loopback",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/bridge",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/bridge",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/flannel",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/flannel",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/host-device",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-device",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
         "path": "/etc/coreos/update.conf",
         "contents": {
           "source": "data:,GROUP%3Dstable%0AREBOOT_STRATEGY%3D%22reboot%22%0ALOCKSMITHD_REBOOT_WINDOW_START%3D%2205%3A00%22%0ALOCKSMITHD_REBOOT_WINDOW_LENGTH%3D%221h%22",
