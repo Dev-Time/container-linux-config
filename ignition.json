@@ -95,6 +95,69 @@
       },
       {
         "filesystem": "root",
+        "path": "/opt/cni/bin/dhcp",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/dhcp",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/ipvlan",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ipvlan",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/macvlan",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/macvlan",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/portmap",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/portmap",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/ptp",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ptp",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/tuning",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/tuning",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/vlan",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/vlan",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
         "path": "/etc/coreos/update.conf",
         "contents": {
           "source": "data:,GROUP%3Dstable%0AREBOOT_STRATEGY%3D%22reboot%22%0ALOCKSMITHD_REBOOT_WINDOW_START%3D%2205%3A00%22%0ALOCKSMITHD_REBOOT_WINDOW_LENGTH%3D%221h%22",

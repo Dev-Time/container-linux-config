@@ -76,6 +76,48 @@ storage:
       contents:
         remote:
           url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-local"
+    - path: "/opt/cni/bin/dhcp"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/dhcp"
+    - path: "/opt/cni/bin/ipvlan"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ipvlan"
+    - path: "/opt/cni/bin/macvlan"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/macvlan"
+    - path: "/opt/cni/bin/portmap"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/portmap"
+    - path: "/opt/cni/bin/ptp"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ptp"
+    - path: "/opt/cni/bin/tuning"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/tuning"
+    - path: "/opt/cni/bin/vlan"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/vlan"
 systemd:
   units:
     - name: "k3s-agent.service"
