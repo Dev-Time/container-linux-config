@@ -23,34 +23,34 @@ storage:
       mode: 420
       contents:
         inline: "coreos"
-#    - path: "/etc/cni/net.d/10-flannel.conflist"
-#      filesystem: "root"
-#      mode: 644
-#      contents:
-#        inline: |
-#          {
-#            "name": "cbr0",
-#            "plugins": [
-#              {
-#                "type": "flannel",
-#                "delegate": {
-#                  "hairpinMode": true,
-#                  "isDefaultGateway": true
-#                }
-#              },
-#              {
-#                "type": "portmap",
-#                "capabilities": {
-#                  "portMappings": true
-#                }
-#              }
-#            ]
-#          }
-#    - path: "/opt/cni/bin/loopback"
-#      filesystem: "root"
-#      mode: 755
-#      contents:
-#        remote
+    - path: "/etc/cni/net.d/10-flannel.conflist"
+      filesystem: "root"
+      mode: 644
+      contents:
+        inline: |
+          {
+            "name": "cbr0",
+            "plugins": [
+              {
+                "type": "flannel",
+                "delegate": {
+                  "hairpinMode": true,
+                  "isDefaultGateway": true
+                }
+              },
+              {
+                "type": "portmap",
+                "capabilities": {
+                  "portMappings": true
+                }
+              }
+            ]
+          }
+    - path: "/opt/cni/bin/loopback"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote
 systemd:
   units:
     - name: "k3s-agent.service"
@@ -65,7 +65,7 @@ systemd:
         Type=exec
         ExecStartPre=-/sbin/modprobe br_netfilter
         ExecStartPre=-/sbin/modprobe overlay
-        ExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K103785d4aff7aeacf8100cdc44b815b21687cd84c7ad73725f2efce33d98ac9009::node:e4bc72a2b7f4b35b68d7ff2d826fc79b --kubelet-arg allow-privileged=true
+        ExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K103785d4aff7aeacf8100cdc44b815b21687cd84c7ad73725f2efce33d98ac9009::node:e4bc72a2b7f4b35b68d7ff2d826fc79b --no-flannel --kubelet-arg allow-privileged=true
         KillMode=process
         Delegate=yes
         LimitNOFILE=infinity
