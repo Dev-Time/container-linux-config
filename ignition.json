@@ -17,9 +17,7 @@
     "users": [
       {
         "groups": [
-          "sudo",
-          "ssh",
-          "users"
+          "sudo"
         ],
         "homeDir": "/home/whenke",
         "name": "whenke",

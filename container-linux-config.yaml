@@ -6,8 +6,6 @@ passwd:
       home_dir: "/home/whenke"
       groups:
         - "sudo"
-        - "ssh"
-        - "users"
       shell: "/bin/bash"
   groups:
     - name: "whenke"
