@@ -32,6 +32,15 @@
       },
       {
         "filesystem": "root",
+        "path": "/etc/hostname",
+        "contents": {
+          "source": "data:,coreos",
+          "verification": {}
+        },
+        "mode": 420
+      },
+      {
+        "filesystem": "root",
         "path": "/etc/coreos/update.conf",
         "contents": {
           "source": "data:,GROUP%3Dstable%0AREBOOT_STRATEGY%3D%22reboot%22%0ALOCKSMITHD_REBOOT_WINDOW_START%3D%2205%3A00%22%0ALOCKSMITHD_REBOOT_WINDOW_LENGTH%3D%221h%22",

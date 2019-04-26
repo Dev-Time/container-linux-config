@@ -18,6 +18,11 @@ storage:
         remote:
           url: "https://github.com/rancher/k3s/releases/download/v0.4.0/k3s"
       mode: 777
+    - path: "/etc/hostname"
+      filesystem: "root"
+      mode: 420
+      contents:
+        inline: "coreos"
 systemd:
   units:
     - name: "k3s-agent.service"
