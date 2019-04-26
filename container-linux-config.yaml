@@ -12,7 +12,7 @@ locksmith:
   window_length: "1h"
 storage:
   files:
-    - path: "/usr/local/bin/k3s"
+    - path: "/opt/k3s"
       filesystem: "root"
       contents:
         remote:
