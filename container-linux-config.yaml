@@ -50,7 +50,26 @@ storage:
       filesystem: "root"
       mode: 755
       contents:
-        remote
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/loopback"
+    - path: "/opt/cni/bin/bridge"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/bridge"
+    - path: "/opt/cni/bin/flannel"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/flannel"
+    - path: "/opt/cni/bin/host-device"
+      filesystem: "root"
+      mode: 755
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-device"
 systemd:
   units:
     - name: "k3s-agent.service"
