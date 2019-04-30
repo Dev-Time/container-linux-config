@@ -170,7 +170,7 @@
   "systemd": {
     "units": [
       {
-        "contents": "[Unit]\nDescription=Lightweight Kubernetes\nDocumentation=https://k3s.io\nAfter=network.target\n\n[Service]\nType=exec\nExecStartPre=-/sbin/modprobe br_netfilter\nExecStartPre=-/sbin/modprobe overlay\nExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K103785d4aff7aeacf8100cdc44b815b21687cd84c7ad73725f2efce33d98ac9009::node:e4bc72a2b7f4b35b68d7ff2d826fc79b --no-flannel --kubelet-arg allow-privileged=true\nKillMode=process\nDelegate=yes\nLimitNOFILE=infinity\nLimitNPROC=infinity\nLimitCORE=infinity\nTasksMax=infinity\n\n[Install]\nWantedBy=multi-user.target\n",
+        "contents": "[Unit]\nDescription=Lightweight Kubernetes\nDocumentation=https://k3s.io\nAfter=network.target\n\n[Service]\nType=exec\nExecStartPre=-/sbin/modprobe br_netfilter\nExecStartPre=-/sbin/modprobe overlay\nExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K105890d06857be9ddcd1bd4fc31488c1bf9abfc02c956af9bb481497c6c28a5579::node:8b0104de554cfa3909b16fa6ff89cffb --no-flannel --kubelet-arg allow-privileged=true\nKillMode=process\nDelegate=yes\nLimitNOFILE=infinity\nLimitNPROC=infinity\nLimitCORE=infinity\nTasksMax=infinity\n\n[Install]\nWantedBy=multi-user.target\n",
         "enabled": true,
         "name": "k3s-agent.service"
       }
