@@ -16,7 +16,7 @@ storage:
       filesystem: "root"
       contents:
         remote:
-          url: "https://github.com/rancher/k3s/releases/download/v0.4.0/k3s"
+          url: "https://github.com/rancher/k3s/releases/download/v0.5.0/k3s"
       mode: 777
     - path: "/etc/hostname"
       filesystem: "root"
@@ -126,12 +126,10 @@ systemd:
         [Unit]
         Description=Lightweight Kubernetes
         Documentation=https://k3s.io
-        After=network.target
+        After=network-online-online.target
 
         [Service]
-        Type=exec
-        ExecStartPre=-/sbin/modprobe br_netfilter
-        ExecStartPre=-/sbin/modprobe overlay
+        Type=notify
         ExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K105890d06857be9ddcd1bd4fc31488c1bf9abfc02c956af9bb481497c6c28a5579::node:8b0104de554cfa3909b16fa6ff89cffb --no-flannel --kubelet-arg allow-privileged=true
         KillMode=process
         Delegate=yes
