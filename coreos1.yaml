@@ -22,7 +22,7 @@ storage:
       filesystem: "root"
       mode: 420
       contents:
-        inline: "coreos"
+        inline: "coreos1"
     - path: "/etc/cni/net.d/10-flannel.conflist"
       filesystem: "root"
       mode: 644
