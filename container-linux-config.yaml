@@ -139,6 +139,7 @@ systemd:
         LimitNPROC=infinity
         LimitCORE=infinity
         TasksMax=infinity
+        Restart=on-failure
 
         [Install]
         WantedBy=multi-user.target
