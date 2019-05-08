@@ -1,0 +1,32 @@
+storage:
+  disks:
+    - device: "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0"
+      wipe_table: true
+      partitions:
+        - label: "stable"
+          number: 1
+          size: 0
+          start: 0
+          type_guid: "linux_filesystem_data"
+  filesystems:
+    - name: "stable"
+      mount:
+        device: "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0"
+        format: "ext4"
+        wipe_filesystem: true
+        label: "root"
+systemd:
+  units:
+    - name: "install-coreos.service"
+      enabled: true
+      contents: |
+        [Unit]
+        Description=Installs Coreos
+        After=network-online-online.target
+
+        [Service]
+        Type=oneshot
+        ExecStart=/usr/bincoreos-install -d /dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0 -i /opt/ignition.json -C stable
+
+        [Install]
+        WantedBy=multi-user.target

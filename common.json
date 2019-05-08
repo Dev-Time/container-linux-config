@@ -20,19 +20,6 @@
     ]
   },
   "storage": {
-    "disks": [
-      {
-        "device": "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0",
-        "partitions": [
-          {
-            "label": "root",
-            "number": 1,
-            "typeGuid": "0fc63daf-8483-4772-8e79-3d69d8477de4"
-          }
-        ],
-        "wipeTable": true
-      }
-    ],
     "files": [
       {
         "filesystem": "root",
@@ -168,17 +155,6 @@
           "verification": {}
         },
         "mode": 420
-      }
-    ],
-    "filesystems": [
-      {
-        "mount": {
-          "device": "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0",
-          "format": "ext4",
-          "label": "root",
-          "wipeFilesystem": true
-        },
-        "name": "root"
       }
     ]
   },

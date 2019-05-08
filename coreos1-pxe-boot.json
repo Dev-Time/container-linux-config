@@ -1,0 +1,33 @@
+{
+  "ignition": {
+    "config": {
+      "append": [
+        {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/common-pxe-boot.json",
+          "verification": {}
+        }
+      ]
+    },
+    "security": {
+      "tls": {}
+    },
+    "timeouts": {},
+    "version": "2.2.0"
+  },
+  "networkd": {},
+  "passwd": {},
+  "storage": {
+    "files": [
+      {
+        "filesystem": "root",
+        "path": "/opt/ignition.json",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/coreos1.json",
+          "verification": {}
+        },
+        "mode": 666
+      }
+    ]
+  },
+  "systemd": {}
+}
