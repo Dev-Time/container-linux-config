@@ -1,0 +1,194 @@
+{
+  "ignition": {
+    "config": {},
+    "security": {
+      "tls": {}
+    },
+    "timeouts": {},
+    "version": "2.2.0"
+  },
+  "networkd": {},
+  "passwd": {
+    "users": [
+      {
+        "name": "core",
+        "sshAuthorizedKeys": [
+          "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAACAQDQ3M0ToiNWuS3tFPLaUjx4YM2AjnxABNl0DlpdKY6wFJK1XtT/2r/JoWXCx4t0VpVsfgpHPS+yVnW//p+KTq4BYgoXHvfowXc7zlkBl8cD/FHdKTA3C19rHg/6ReqopL1POBBlJ5kQQysSrK1OxeWTm/nzCThE5UDynS3UQV2/SlxRsg7P3B8oVbkwofg/Qf1aMq91tZNxBaFMKnTQcfb1ZOB1jrhpuc9//HzqgpO/lO6WcJA48lI7Do2Ga5SGgvOKRn+IhIbU1cp1iaZUgzcoqvb2QtbtsrLU2SRqKU90dyF26UnBxTYYmPfDjXvrTzAKyEvt2Z6LR63Mzp4RwfY0/qUXWD2yIxSVO/t3hu2TDGOHaJLpQd+i/5wzWz/VZcZWs6jHt+/+yesVFqZpEfjfV9jzzfny7lx3fHFCHu+3HUmBg62GGWQ5FU8QGWoeWJVP4TZeEvjnWi+/xjSBgQswAyg696ZlrbYEr6+UMyfO5ajjDs4d7nPUj3yDEGl/OoCBSrQCKr1UKhToaTE3HFSKOv/VMptmHp7p7Z7UF6KVy+sdFfCjXw1gdZByWW10zLpI8AUvaioeuM774Jm9tR0kCpUDo2F9jzl1l8dgTwwqlkfPA0hcNzeOVBkxn06/hOfQ2JBvYdg46CIUPC5DhV8EHfMmScq5dPyTlh+nrvzaqQ=="
+        ],
+        "shell": "/bin/bash"
+      }
+    ]
+  },
+  "storage": {
+    "disks": [
+      {
+        "device": "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0",
+        "partitions": [
+          {
+            "label": "root",
+            "number": 1,
+            "typeGuid": "0fc63daf-8483-4772-8e79-3d69d8477de4"
+          }
+        ],
+        "wipeTable": true
+      }
+    ],
+    "files": [
+      {
+        "filesystem": "root",
+        "path": "/opt/k3s",
+        "contents": {
+          "source": "https://github.com/rancher/k3s/releases/download/v0.5.0/k3s",
+          "verification": {}
+        },
+        "mode": 777
+      },
+      {
+        "filesystem": "root",
+        "path": "/etc/cni/net.d/10-flannel.conflist",
+        "contents": {
+          "source": "data:,%7B%0A%20%20%22name%22%3A%20%22cbr0%22%2C%0A%20%20%22plugins%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22type%22%3A%20%22flannel%22%2C%0A%20%20%20%20%20%20%22delegate%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22hairpinMode%22%3A%20true%2C%0A%20%20%20%20%20%20%20%20%22isDefaultGateway%22%3A%20true%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22type%22%3A%20%22portmap%22%2C%0A%20%20%20%20%20%20%22capabilities%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22portMappings%22%3A%20true%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A",
+          "verification": {}
+        },
+        "mode": 644
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/loopback",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/loopback",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/bridge",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/bridge",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/flannel",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/flannel",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/host-device",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-device",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/host-local",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-local",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/dhcp",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/dhcp",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/ipvlan",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ipvlan",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/macvlan",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/macvlan",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/portmap",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/portmap",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/ptp",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ptp",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/tuning",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/tuning",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/opt/cni/bin/vlan",
+        "contents": {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/vlan",
+          "verification": {}
+        },
+        "mode": 755
+      },
+      {
+        "filesystem": "root",
+        "path": "/etc/coreos/update.conf",
+        "contents": {
+          "source": "data:,GROUP%3Dstable%0AREBOOT_STRATEGY%3D%22reboot%22%0ALOCKSMITHD_REBOOT_WINDOW_START%3D%2205%3A00%22%0ALOCKSMITHD_REBOOT_WINDOW_LENGTH%3D%221h%22",
+          "verification": {}
+        },
+        "mode": 420
+      }
+    ],
+    "filesystems": [
+      {
+        "mount": {
+          "device": "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0",
+          "format": "ext4",
+          "label": "root",
+          "wipeFilesystem": true
+        },
+        "name": "root"
+      }
+    ]
+  },
+  "systemd": {
+    "units": [
+      {
+        "contents": "[Unit]\nDescription=Lightweight Kubernetes\nDocumentation=https://k3s.io\nAfter=network-online-online.target\n\n[Service]\nType=notify\nExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K105890d06857be9ddcd1bd4fc31488c1bf9abfc02c956af9bb481497c6c28a5579::node:8b0104de554cfa3909b16fa6ff89cffb --no-flannel --kubelet-arg allow-privileged=true\nKillMode=process\nDelegate=yes\nLimitNOFILE=infinity\nLimitNPROC=infinity\nLimitCORE=infinity\nTasksMax=infinity\nRestart=on-failure\nRestartSec=5\n\n[Install]\nWantedBy=multi-user.target\n",
+        "enabled": true,
+        "name": "k3s-agent.service"
+      }
+    ]
+  }
+}
