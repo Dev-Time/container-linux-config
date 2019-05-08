@@ -90,6 +90,29 @@ storage:
       contents:
         remote:
           url: "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/vlan"
+    - path: "/etc/cni/net.d/10-flannel.conflist"
+      filesystem: "root"
+      mode: 0644
+      contents:
+        inline: |
+          {
+            "name": "cbr0",
+            "plugins": [
+              {
+                "type": "flannel",
+                "delegate": {
+                  "hairpinMode": true,
+                  "isDefaultGateway": true
+                }
+              },
+              {
+                "type": "portmap",
+                "capabilities": {
+                  "portMappings": true
+                }
+              }
+            ]
+          }
 systemd:
   units:
     - name: "k3s-agent.service"

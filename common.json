@@ -140,6 +140,15 @@
       },
       {
         "filesystem": "root",
+        "path": "/etc/cni/net.d/10-flannel.conflist",
+        "contents": {
+          "source": "data:,%7B%0A%20%20%22name%22%3A%20%22cbr0%22%2C%0A%20%20%22plugins%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22type%22%3A%20%22flannel%22%2C%0A%20%20%20%20%20%20%22delegate%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22hairpinMode%22%3A%20true%2C%0A%20%20%20%20%20%20%20%20%22isDefaultGateway%22%3A%20true%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22type%22%3A%20%22portmap%22%2C%0A%20%20%20%20%20%20%22capabilities%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22portMappings%22%3A%20true%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A",
+          "verification": {}
+        },
+        "mode": 420
+      },
+      {
+        "filesystem": "root",
         "path": "/etc/coreos/update.conf",
         "contents": {
           "source": "data:,GROUP%3Dstable%0AREBOOT_STRATEGY%3D%22reboot%22%0ALOCKSMITHD_REBOOT_WINDOW_START%3D%2205%3A00%22%0ALOCKSMITHD_REBOOT_WINDOW_LENGTH%3D%221h%22",
