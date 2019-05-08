@@ -1,0 +1,11 @@
+ignition:
+  config:
+    append:
+      - source: "https://github.com/Dev-Time/container-linux-config/raw/master/common.json"
+storage:
+  files:
+    - path: "/etc/hostname"
+      filesystem: "root"
+      mode: 0420
+      contents:
+        inline: "coreos4"

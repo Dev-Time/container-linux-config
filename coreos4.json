@@ -1,0 +1,33 @@
+{
+  "ignition": {
+    "config": {
+      "append": [
+        {
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/common.json",
+          "verification": {}
+        }
+      ]
+    },
+    "security": {
+      "tls": {}
+    },
+    "timeouts": {},
+    "version": "2.2.0"
+  },
+  "networkd": {},
+  "passwd": {},
+  "storage": {
+    "files": [
+      {
+        "filesystem": "root",
+        "path": "/etc/hostname",
+        "contents": {
+          "source": "data:,coreos4",
+          "verification": {}
+        },
+        "mode": 272
+      }
+    ]
+  },
+  "systemd": {}
+}
