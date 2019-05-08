@@ -14,6 +14,7 @@ systemd:
         [Service]
         Type=oneshot
         ExecStart=/usr/bin/coreos-install -d /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0 -i /opt/ignition.json -C stable
+        ExecStopPost=/usr/sbin/reboot
 
         [Install]
         WantedBy=multi-user.target

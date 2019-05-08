@@ -28,16 +28,7 @@
           "source": "https://github.com/rancher/k3s/releases/download/v0.5.0/k3s",
           "verification": {}
         },
-        "mode": 777
-      },
-      {
-        "filesystem": "root",
-        "path": "/etc/cni/net.d/10-flannel.conflist",
-        "contents": {
-          "source": "data:,%7B%0A%20%20%22name%22%3A%20%22cbr0%22%2C%0A%20%20%22plugins%22%3A%20%5B%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22type%22%3A%20%22flannel%22%2C%0A%20%20%20%20%20%20%22delegate%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22hairpinMode%22%3A%20true%2C%0A%20%20%20%20%20%20%20%20%22isDefaultGateway%22%3A%20true%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%2C%0A%20%20%20%20%7B%0A%20%20%20%20%20%20%22type%22%3A%20%22portmap%22%2C%0A%20%20%20%20%20%20%22capabilities%22%3A%20%7B%0A%20%20%20%20%20%20%20%20%22portMappings%22%3A%20true%0A%20%20%20%20%20%20%7D%0A%20%20%20%20%7D%0A%20%20%5D%0A%7D%0A",
-          "verification": {}
-        },
-        "mode": 644
+        "mode": 511
       },
       {
         "filesystem": "root",
@@ -46,7 +37,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/loopback",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -55,7 +46,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/bridge",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -64,7 +55,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/flannel",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -73,7 +64,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-device",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -82,7 +73,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/host-local",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -100,7 +91,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ipvlan",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -109,7 +100,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/macvlan",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -118,7 +109,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/portmap",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -127,7 +118,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/ptp",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -136,7 +127,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/tuning",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
@@ -145,7 +136,7 @@
           "source": "https://github.com/Dev-Time/container-linux-config/raw/master/cni-plugins-amd64-v0.7.5/vlan",
           "verification": {}
         },
-        "mode": 755
+        "mode": 493
       },
       {
         "filesystem": "root",
