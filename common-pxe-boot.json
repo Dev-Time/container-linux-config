@@ -12,33 +12,15 @@
   "storage": {
     "disks": [
       {
-        "device": "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0",
-        "partitions": [
-          {
-            "label": "stable",
-            "number": 1,
-            "typeGuid": "0fc63daf-8483-4772-8e79-3d69d8477de4"
-          }
-        ],
+        "device": "/dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0",
         "wipeTable": true
-      }
-    ],
-    "filesystems": [
-      {
-        "mount": {
-          "device": "/dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0",
-          "format": "ext4",
-          "label": "root",
-          "wipeFilesystem": true
-        },
-        "name": "stable"
       }
     ]
   },
   "systemd": {
     "units": [
       {
-        "contents": "[Unit]\nDescription=Installs Coreos\nAfter=network-online-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/bincoreos-install -d /dev/disk/by-id/scsi-0QEMU_QUMU_HARDDISK_drive-scsi0 -i /opt/ignition.json -C stable\n\n[Install]\nWantedBy=multi-user.target",
+        "contents": "[Unit]\nDescription=Installs Coreos\nAfter=network-online-online.target\n\n[Service]\nType=oneshot\nExecStart=/usr/bincoreos-install -d /dev/disk/by-id/scsi-0QEMU_QEMU_HARDDISK_drive-scsi0 -i /opt/ignition.json -C stable\n\n[Install]\nWantedBy=multi-user.target",
         "enabled": true,
         "name": "install-coreos.service"
       }
