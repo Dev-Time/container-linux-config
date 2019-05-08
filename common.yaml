@@ -125,7 +125,7 @@ systemd:
 
         [Service]
         Type=notify
-        ExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K10b1c5ae0041f6c136d4d170ac11bca41ce09ca590dcfff7d5fc8b00bfa1d52a41::node:43429ab82a50715c80fe8498c16f6b2b --no-flannel --kubelet-arg allow-privileged=true
+        ExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K10b1c5ae0041f6c136d4d170ac11bca41ce09ca590dcfff7d5fc8b00bfa1d52a41::node:43429ab82a50715c80fe8498c16f6b2b --no-flannel --kubelet-arg allow-privileged=true --docker
         KillMode=process
         Delegate=yes
         LimitNOFILE=infinity
