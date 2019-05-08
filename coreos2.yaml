@@ -126,7 +126,7 @@ systemd:
         [Unit]
         Description=Lightweight Kubernetes
         Documentation=https://k3s.io
-        After=network-online.target
+        After=network-online-online.target
 
         [Service]
         Type=notify

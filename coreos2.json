@@ -170,7 +170,7 @@
   "systemd": {
     "units": [
       {
-        "contents": "[Unit]\nDescription=Lightweight Kubernetes\nDocumentation=https://k3s.io\nAfter=network-online.target\n\n[Service]\nType=notify\nExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K105890d06857be9ddcd1bd4fc31488c1bf9abfc02c956af9bb481497c6c28a5579::node:8b0104de554cfa3909b16fa6ff89cffb --no-flannel --kubelet-arg allow-privileged=true\nKillMode=process\nDelegate=yes\nLimitNOFILE=infinity\nLimitNPROC=infinity\nLimitCORE=infinity\nTasksMax=infinity\nRestart=on-failure\nRestartSec=5\n\n[Install]\nWantedBy=multi-user.target\n",
+        "contents": "[Unit]\nDescription=Lightweight Kubernetes\nDocumentation=https://k3s.io\nAfter=network-online-online.target\n\n[Service]\nType=notify\nExecStart=/opt/k3s agent --server https://192.168.1.30:6443 --token K105890d06857be9ddcd1bd4fc31488c1bf9abfc02c956af9bb481497c6c28a5579::node:8b0104de554cfa3909b16fa6ff89cffb --no-flannel --kubelet-arg allow-privileged=true\nKillMode=process\nDelegate=yes\nLimitNOFILE=infinity\nLimitNPROC=infinity\nLimitCORE=infinity\nTasksMax=infinity\nRestart=on-failure\nRestartSec=5\n\n[Install]\nWantedBy=multi-user.target\n",
         "enabled": true,
         "name": "k3s-agent.service"
       }
