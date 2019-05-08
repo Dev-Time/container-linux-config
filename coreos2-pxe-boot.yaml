@@ -1,0 +1,12 @@
+ignition:
+  config:
+    append:
+      - source: "https://github.com/Dev-Time/container-linux-config/raw/master/common-pxe-boot.json"
+storage:
+  files:
+    - path: "/opt/ignition.json"
+      filesystem: "root"
+      mode: 666
+      contents:
+        remote:
+          url: "https://github.com/Dev-Time/container-linux-config/raw/master/coreos2.json"

@@ -3,7 +3,7 @@
     "config": {
       "append": [
         {
-          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/common.json",
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/common-pxe-boot.json",
           "verification": {}
         }
       ]
@@ -20,12 +20,12 @@
     "files": [
       {
         "filesystem": "root",
-        "path": "/etc/hostname",
+        "path": "/opt/ignition.json",
         "contents": {
-          "source": "data:,coreos2",
+          "source": "https://github.com/Dev-Time/container-linux-config/raw/master/coreos2.json",
           "verification": {}
         },
-        "mode": 272
+        "mode": 666
       }
     ]
   },
